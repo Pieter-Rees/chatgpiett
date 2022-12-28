@@ -39,6 +39,10 @@ function App() {
         .then((data) => setResponse(data.message))
   }
 
+  const handleReset = (e) => {
+    setMessage('')
+  }
+
   return (
     <Grommet theme={theme} full>
       <Page pad="medium">
@@ -49,7 +53,7 @@ function App() {
           />
         </Header>
         <PageContent>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} onReset={handleReset}>
             <FormField>
               <TextArea
                 placeholder="type here"
